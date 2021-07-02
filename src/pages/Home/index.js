@@ -7,6 +7,7 @@ const RepoList = () => {
   // Handelling all queries
   const { loading, error, data } = useQuery(QUERY);
 
+  // If data plate is -> loading..
   if (loading)
     return (
       <Loader
@@ -17,7 +18,11 @@ const RepoList = () => {
         secondaryColor="#ddd"
       />
     );
-  if (error) return <p>Network Error :(</p>;
+
+  // If Netowk plate is -> Error..
+  if (error) return <p>Network Error 🚀 :)</p>;
+
+  // returning requirements with components
   return (
     <>
       <h2>50 Repositories with Max Stars 🚀</h2>
