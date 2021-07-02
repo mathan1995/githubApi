@@ -1,6 +1,11 @@
 import React from "react";
 import moment from "moment";
-import { AiOutlineIssuesClose, AiOutlineStar } from "react-icons/ai";
+import {
+  AiOutlineCheckSquare,
+  AiOutlineIssuesClose,
+  AiOutlineStar,
+  AiOutlineUser,
+} from "react-icons/ai";
 
 const RepoList = ({
   key,
@@ -32,7 +37,13 @@ const RepoList = ({
           <div className="title">
             <h5>{description}</h5>
           </div>
-          {ownerName ? <span className="chip"> {ownerName}</span> : <></>}
+          {ownerName ? (
+            <span className="chip">
+              <AiOutlineUser /> {ownerName}
+            </span>
+          ) : (
+            <></>
+          )}
         </header>
         <div className="chips">
           <span className="chip">
@@ -42,7 +53,8 @@ const RepoList = ({
             <AiOutlineIssuesClose /> {kFormatter(totalIssues)}
           </span>
           <span className="chip">
-            Submited {moment(lastModified).fromNow()} by {ownerName}
+            <AiOutlineCheckSquare /> Submited {moment(lastModified).fromNow()}{" "}
+            by {ownerName}
           </span>
         </div>
       </article>
