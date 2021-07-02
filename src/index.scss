@@ -1,0 +1,206 @@
+$globalFont: "Poppins", sans-serif;
+$bgColor: #ffffff;
+$borderColor: #cccccc;
+$whitee: #ffffff;
+$heading: 18px;
+$subHeading: 680px;
+$primaryText: #333333;
+$secondaryText: #0575e6;
+$borderRadius: 15px;
+$grayText: #9b9999;
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    h2 {
+        font-size: 25px;
+        color: $secondaryText;
+        text-align: center;
+    }
+}
+
+.card {
+    background: $bgColor;
+    border-radius: $borderRadius;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    margin-bottom: 5px;
+
+    h5 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        margin: 10px 0;
+    }
+    &:hover {
+        transform: scale(1.02);
+        transition: all 300ms;
+    }
+    .card-body {
+        display: flex;
+        flex-flow: row wrap;
+        padding: 30px;
+    }
+    header {
+        flex: 100%;
+    }
+
+    .chips {
+        align-self: flex-end;
+    }
+    .featured-image {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 250px 100%;
+        border-top-left-radius: $borderRadius;
+        border-top-right-radius: $borderRadius;
+        overflow: hidden;
+        width: 100%;
+        height: 300px; // only for mobile, vertical cards: flex-direction: column;
+    }
+}
+
+// Horizontal kicks in => Mobile
+@media only screen and (min-width: 768px) {
+    .card {
+        flex-direction: row;
+        max-height: 250px; // desktop horizontal cards with featured image
+
+        h5 {
+            font-size: calc(100% + 1vw);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .featured-image {
+            border-right: 0.5px solid $borderColor;
+            background-size: 100% 100%;
+            border-top-left-radius: $borderRadius;
+            border-bottom-left-radius: $borderRadius;
+            border-top-right-radius: 0;
+            max-width: 250px;
+            max-height: 229px; // desktop horizontal cards with featured image
+        }
+    }
+}
+
+// monitor screen sizes
+@media only screen and (min-width: 1280px) {
+    .card {
+        h5 {
+            font-size: 20px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+    }
+}
+
+// Typography
+* {
+    font-family: $globalFont;
+}
+body {
+    background-color: #f1f1f1;
+}
+h5 {
+    line-height: 1.2;
+    font-weight: 300;
+    color: $grayText;
+    margin: 0.5em 0;
+}
+.pre-heading {
+    color: $primaryText;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+// NON-CARD STYLES
+ul {
+    display: block;
+    margin: 0 auto;
+    max-width: 1160px;
+    padding: 5px;
+}
+
+// container for chips
+.chips {
+    white-space: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+
+    // hide scrollbars chrome / IE10+ & Edge
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -ms-overflow-style: none;
+}
+
+// single chips
+.chip {
+    display: inline-block;
+    position: relative;
+    font-size: 16px;
+    line-height: 1.4;
+    white-space: nowrap;
+    color: $primaryText;
+    background: $bgColor;
+    border: 1px solid $borderColor;
+    border-radius: $borderRadius;
+    margin-right: 8px;
+    padding: 5px 12px;
+    max-height: 32px;
+
+    &:hover {
+        border: 1px solid $secondaryText;
+    }
+
+    &.large {
+        text-transform: uppercase;
+        color: $primaryText;
+        border: 1px solid $borderColor;
+        background: $bgColor;
+        padding: 10px 15px;
+        max-height: 44px;
+    }
+    input {
+        margin-bottom: 0 !important;
+        height: 22px !important;
+        background-color: transparent !important;
+        padding: 3px 0 0 0 !important;
+        &::placeholder {
+            color: $primaryText;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+    }
+}
+span.chip {
+    cursor: pointer;
+    font-size: 13px;
+    &:hover,
+    &:visited,
+    &:active {
+        color: $secondaryText;
+    }
+}
+span.chip.large {
+    &:visited,
+    &:hover,
+    &:active {
+        color: $primaryText;
+    }
+}
