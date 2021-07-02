@@ -46,9 +46,9 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
  
 ### `Packages Initiated`
 
-`"graphql": "^15.5.1" -> graphql`
-  `"moment": "^2.29.1" -> for time oriented plates`
-  `"node-sass": "4.14.1" -> for styling plate`
-  `"@apollo/client": "^3.3.20" -> for graphQL client (flow management) plate`
+`"graphql": "^15.5.1" -> graphql` <br/>
+  `"moment": "^2.29.1" -> for time oriented plates` <br/>
+  `"node-sass": "4.14.1" -> for styling plate` <br/>
+  `"@apollo/client": "^3.3.20" -> for graphQL client (flow management) plate` <br/>
   `"spinners-react": "^1.0.4" -> for Loading screen `
 
