@@ -1,13 +1,22 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
 import QUERY from "../../utils/query";
-import { RepoCard } from "../../components";
+import { RepoCard, Loader } from "../../components";
 
 const RepoList = () => {
   // Handelling all queries
   const { loading, error, data } = useQuery(QUERY);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading)
+    return (
+      <Loader
+        size={100}
+        thickness={31}
+        speed={100}
+        color="black"
+        secondaryColor="#ddd"
+      />
+    );
   if (error) return <p>Network Error :(</p>;
   return (
     <>
@@ -15,6 +24,7 @@ const RepoList = () => {
       {data.search &&
         data.search.edges.map(({ node }) => (
           <RepoCard
+            url={node.owner.url}
             key={node.id}
             name={node.name}
             description={node.description}

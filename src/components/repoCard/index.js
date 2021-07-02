@@ -1,8 +1,10 @@
 import React from "react";
 import moment from "moment";
 import { AiOutlineIssuesClose, AiOutlineStar } from "react-icons/ai";
+
 const RepoList = ({
   key,
+  url,
   name,
   description,
   image,
@@ -19,9 +21,8 @@ const RepoList = ({
   };
 
   return (
-    <li className="card" key={key}>
+    <a href={url} className="card" key={key}>
       <div
-        href="/"
         className="featured-image"
         style={{ backgroundImage: `url(${image})` }}
       />
@@ -44,7 +45,7 @@ const RepoList = ({
           </span>
         </div>
       </article>
-    </li>
+    </a>
   );
 };
 
