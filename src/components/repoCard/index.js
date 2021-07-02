@@ -32,6 +32,7 @@ const RepoList = ({
           <div className="title">
             <h5>{description}</h5>
           </div>
+          {ownerName ? <span className="chip"> {ownerName}</span> : <></>}
         </header>
         <div className="chips">
           <span className="chip">
