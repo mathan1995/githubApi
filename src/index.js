@@ -8,7 +8,7 @@ import App from "./App";
 const GITHUB_BASE_URL = "https://api.github.com/graphql";
 
 // Access Token used to the app -> flow
-const ACCESS_TOKEN = "238a621a46501c51881e00e277ab31f63f02cd8d";
+const ACCESS_TOKEN = "";
 
 // Setting up our client
 const client = new ApolloClient({

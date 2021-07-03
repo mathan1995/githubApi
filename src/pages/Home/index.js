@@ -59,7 +59,7 @@ const RepoList = () => {
           secondaryColor="#ddd"
         />
       ) : error ? (
-        <p>Network Error or in downline 🚀 :)</p>
+        <p>Network Error or in-downline 🚀 :)</p>
       ) : (
         <>
           {/* <div>Got {data.search.edges.length}</div> */}
@@ -71,7 +71,8 @@ const RepoList = () => {
             loader={<p>Loading...</p>}
             endMessage={
               <p className="end__cursor">
-                Yay! You have seen all the 50 most stared Repositories 🚀 :){" "}
+                Yay! You have seen all the {data.search.edges.length} most
+                stared Repositories 🚀 :){" "}
               </p>
             }
             // below props only if you need pull down functionality
