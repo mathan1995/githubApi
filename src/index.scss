@@ -13,17 +13,40 @@ $grayText: #9b9999;
     max-width: 1000px;
     margin: 0 auto;
 
+    // for not allow user to select because of pulldown refresh -> Prop in Main page
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+
     h2 {
         font-size: 25px;
         color: $secondaryText;
         text-align: center;
     }
+
+    h3 {
+        font-size: 22px;
+        color: $primaryText;
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+        color: $primaryText;
+    }
+}
+
+.end__cursor {
+    font-weight: bold;
 }
 
 .spinner__container {
     display: flex;
     margin: 0 auto;
-    height: 100vh;
+    height: 90vh;
     align-items: center;
     justify-content: center;
 }

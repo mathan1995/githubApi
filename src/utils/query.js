@@ -1,9 +1,9 @@
 import { gql } from "@apollo/client";
 
 const QUERY = gql`
-  {
-    search(query: "language:JavaScript", type: REPOSITORY, first: 50) {
-      repositoryCount
+  query PageQuery($first: Int!, $after: String, $query: String!) {
+    search(first: $first, after: $after, query: $query, type: REPOSITORY)
+      @connection(key: "search", filter: ["query"]) {
       edges {
         node {
           ... on Repository {
@@ -18,7 +18,7 @@ const QUERY = gql`
               }
             }
             description
-            stargazers {
+            stargazers(orderBy: { field: STARRED_AT, direction: DESC }) {
               totalCount
             }
             issues {
@@ -30,6 +30,11 @@ const QUERY = gql`
             updatedAt
           }
         }
+      }
+      repositoryCount
+      pageInfo {
+        hasNextPage
+        endCursor
       }
     }
   }

@@ -4,14 +4,22 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import "./index.scss";
 import App from "./App";
 
-const TOKEN = "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";
+// Global Url
+const GITHUB_BASE_URL = "https://api.github.com/graphql";
+
+// Access Token used to the app -> flow
+const ACCESS_TOKEN = "238a621a46501c51881e00e277ab31f63f02cd8d";
+
+// Setting up our client
 const client = new ApolloClient({
-  uri: "https://api.github.com/graphql",
+  uri: GITHUB_BASE_URL,
   cache: new InMemoryCache(),
   headers: {
-    Authorization: `Bearer ${TOKEN}`,
+    Authorization: `Bearer ${ACCESS_TOKEN}`,
   },
 });
+
+// Export to render -> APP level
 
 ReactDOM.render(
   <ApolloProvider client={client}>
