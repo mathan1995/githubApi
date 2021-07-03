@@ -51,4 +51,5 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
   `"node-sass": "4.14.1" -> for styling plate` <br/>
   `"@apollo/client": "^3.3.20" -> for graphQL client (flow management) plate` <br/>
   `"spinners-react": "^1.0.4" -> for Loading screen `
+  `"react-infinite-scroll-component": "^6.1.0" -> infinite scrolling`
 
